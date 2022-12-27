@@ -50,4 +50,12 @@ describe("assertions", () => {
       { foo: "foo", bar: "foo" },
     ]).toContainEqual({ foo: "foo", bar: "foo" });
   });
+
+  test("Exceptions", () => {
+    const throwError = () => {
+      throw new Error("Something wrong...");
+    };
+    expect(throwError).toThrow("wrong");
+    expect(throwError).toThrow(/wrong/);
+  });
 });
